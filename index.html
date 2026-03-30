@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="pl">
 <head>
   <meta charset="UTF-8">
@@ -1007,6 +1007,1658 @@
           window.clearInterval(autoplay);
           autoplay = null;
         }
+      }
+
+      if (track && slides.length) {
+        prevBtn?.addEventListener('click', () => goToSlide(currentSlide - 1));
+        nextBtn?.addEventListener('click', () => goToSlide(currentSlide + 1));
+        dots.forEach((dot, index) => dot.addEventListener('click', () => goToSlide(index)));
+        const carousel = document.querySelector('.projects-carousel');
+        carousel?.addEventListener('mouseenter', stopAutoplay);
+        carousel?.addEventListener('mouseleave', startAutoplay);
+        updateCarousel();
+        startAutoplay();
+      }
+
+      applyTranslations(currentLang);
+    });
+  </script>
+</body>
+</html>
+-->
+
+
+
+
+<!DOCTYPE html>
+<!-- MASTER TEMPLATE FOR MULTILINGUAL SEO
+  1) Duplicate this file into /pl/index.html, /en/index.html, /es/index.html, /ru/index.html, /ua/index.html
+  2) In each file set BUILD_LANG to the matching language code
+  3) Replace https://example.com with your real domain before publishing
+-->
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Costa Blanca Invest &amp; Build | Inwestycje w Hiszpanii, działki i budowa domów</title>
+  <meta name="description" content="Costa Blanca Invest &amp; Build — inwestycje w Hiszpanii na Costa Blanca: nowe inwestycje od deweloperów, działki pod zabudowę oraz budowa domów drewnianych, szkieletowych i Thermochip. Fundamenty, remonty pod klucz i premium wykończenia wnętrz." id="meta-description">
+  <link rel="canonical" href="https://example.com/pl/" id="canonical-link">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+  <meta name="author" content="Olga Chernyshenko">
+  <meta name="theme-color" content="#296c76">
+  <meta name="format-detection" content="telephone=no">
+  <!-- SEO multilingual note: for proper international SEO, publish separate URLs per language, e.g. /pl/, /en/, /es/, /ru/, /ua/ -->
+  <link rel="alternate" hreflang="pl" href="https://example.com/pl/">
+  <link rel="alternate" hreflang="en" href="https://example.com/en/">
+  <link rel="alternate" hreflang="es" href="https://example.com/es/">
+  <link rel="alternate" hreflang="ru" href="https://example.com/ru/">
+  <link rel="alternate" hreflang="uk" href="https://example.com/ua/">
+  <link rel="alternate" hreflang="x-default" href="https://example.com/">
+  <link rel="preload" as="image" href="images/hero-sea-palm.jpg">
+  <link rel="icon" href="images/favicon.png">
+
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="pl_PL" id="og-locale">
+  <meta property="og:locale:alternate" content="en_GB">
+  <meta property="og:locale:alternate" content="es_ES">
+  <meta property="og:locale:alternate" content="ru_RU">
+  <meta property="og:locale:alternate" content="uk_UA">
+  <meta property="og:site_name" content="Costa Blanca Invest &amp; Build">
+  <meta property="og:title" content="Costa Blanca Invest &amp; Build | Inwestycje w Hiszpanii, działki i budowa domów" id="og-title">
+  <meta property="og:description" content="Nowe inwestycje od deweloperów, działki pod zabudowę i budowa domów na Costa Blanca dla klientów z Polski." id="og-description">
+  <meta property="og:image" content="https://example.com/images/og-cover.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Inwestycje w Hiszpanii na Costa Blanca — działki, nowe projekty i budowa domów">
+  <meta property="og:url" content="https://example.com/pl/" id="og-url">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Costa Blanca Invest &amp; Build | Inwestycje w Hiszpanii" id="twitter-title">
+  <meta name="twitter:description" content="Działki, nowe inwestycje i budowa domów na Costa Blanca." id="twitter-description">
+  <meta name="twitter:image" content="https://example.com/images/og-cover.jpg">
+
+  <style>
+    :root {
+      --primary: #296c76;
+      --primary-dark: #1f545c;
+      --primary-soft: #f6efe4;
+      --primary-pale: #f8fcfe;
+      --accent: #e28743;
+      --accent-dark: #c8742f;
+      --eco: #3e8028;
+      --investment: #76b5c5;
+      --plots: #873e23;
+      --sand: #eab676;
+      --sand-soft: #faf3e7;
+      --text: #1f2933;
+      --text-soft: #5f6b76;
+      --white: #ffffff;
+      --line: rgba(15, 23, 42, 0.08);
+      --shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
+      --radius: 22px;
+      --maxw: 1200px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      color: var(--text);
+      background: linear-gradient(180deg, #ffffff 0%, #fdf7ef 100%);
+    }
+
+    img { max-width: 100%; display: block; }
+    a { color: inherit; }
+    h1, h2, h3 { margin: 0 0 14px; line-height: 1.15; }
+    p { margin: 0 0 14px; line-height: 1.72; color: var(--text-soft); }
+    ul { margin: 0; padding-left: 18px; color: var(--text-soft); line-height: 1.72; }
+
+    .container {
+      width: min(var(--maxw), calc(100% - 32px));
+      margin: 0 auto;
+    }
+
+    .section {
+      padding: 84px 0;
+      scroll-margin-top: 90px;
+    }
+
+    .section-soft { background: #ffffff; }
+    .section-green { background: linear-gradient(180deg, #ffffff 0%, var(--primary-soft) 100%); }
+    .section-sand { background: linear-gradient(180deg, var(--sand-soft) 0%, #fffaf2 100%); }
+
+    .section-title {
+      max-width: 940px;
+      margin: 0 auto 42px;
+      text-align: center;
+    }
+
+    .section-title h2 {
+      font-size: clamp(30px, 4vw, 46px);
+      color: var(--primary-dark);
+    }
+
+    .eyebrow {
+      display: inline-block;
+      margin-bottom: 14px;
+      padding: 8px 14px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.92);
+      color: var(--primary-dark);
+      font-size: 13px;
+      font-weight: 800;
+      border: 1px solid rgba(31,84,92,0.12);
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 14px 24px;
+      border-radius: 999px;
+      text-decoration: none;
+      font-weight: 800;
+      transition: transform .28s ease, box-shadow .28s ease, filter .28s ease, background .28s ease, border-color .28s ease;
+      border: none;
+      cursor: pointer;
+      position: relative;
+      overflow: hidden;
+      isolation: isolate;
+    }
+
+    .btn::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(120deg, rgba(255,255,255,0) 20%, rgba(255,255,255,0.28) 50%, rgba(255,255,255,0) 80%);
+      transform: translateX(-140%);
+      transition: transform .7s ease;
+      z-index: -1;
+    }
+
+    .btn:hover::before { transform: translateX(140%); }
+    .btn:active { transform: translateY(0) scale(.98); }
+
+    .btn-main {
+      background: linear-gradient(135deg, var(--accent) 0%, var(--accent-dark) 100%);
+      color: #fff;
+      box-shadow: 0 10px 24px rgba(226,135,67,0.35);
+    }
+
+    .btn-main:hover {
+      transform: translateY(-3px) scale(1.01);
+      box-shadow: 0 18px 34px rgba(200,116,47,0.34);
+      filter: saturate(1.08) brightness(1.02);
+    }
+
+    .btn-light {
+      background: #fff;
+      color: var(--primary);
+      border: 2px solid var(--accent);
+      box-shadow: 0 6px 16px rgba(0,0,0,0.05);
+    }
+
+    .btn-light:hover {
+      transform: translateY(-3px) scale(1.01);
+      background: var(--primary-soft);
+      box-shadow: 0 16px 30px rgba(41,108,118,0.12);
+    }
+
+    .btn-whatsapp {
+      background: linear-gradient(135deg, #25d366 0%, #149e48 100%);
+      color: #fff;
+      border-color: transparent;
+      box-shadow: 0 10px 24px rgba(37,211,102,0.22);
+    }
+
+    .btn-whatsapp:hover {
+      background: linear-gradient(135deg, #2ae06f 0%, #149e48 100%);
+      color: #fff;
+      transform: translateY(-3px) scale(1.01);
+      box-shadow: 0 18px 34px rgba(37,211,102,0.28);
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(255,255,255,0.96);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--line);
+      box-shadow: 0 8px 24px rgba(15,23,42,0.04);
+    }
+
+    .header-inner {
+      min-height: 76px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .logo {
+      font-size: 22px;
+      font-weight: 900;
+      color: var(--primary-dark);
+      text-decoration: none;
+      white-space: nowrap;
+    }
+
+    .nav-wrap {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-left: auto;
+    }
+
+    nav {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: var(--text);
+      font-weight: 700;
+      font-size: 14px;
+    }
+
+    nav a:hover { color: var(--accent); }
+
+    .lang-switcher {
+      display: flex;
+      gap: 6px;
+      flex-wrap: wrap;
+    }
+
+    .lang-switcher button {
+      min-width: 42px;
+      border: 1px solid rgba(15,23,42,0.08);
+      padding: 7px 10px;
+      border-radius: 999px;
+      font-weight: 800;
+      font-size: 12px;
+      cursor: pointer;
+      transition: .2s ease;
+    }
+
+    .lang-switcher button[data-lang="pl"] { background: linear-gradient(180deg, #ffffff 50%, #dc143c 50%); color: #111827; }
+    .lang-switcher button[data-lang="es"] { background: linear-gradient(180deg, #c60b1e 25%, #ffc400 25%, #ffc400 75%, #c60b1e 75%); color: #111827; }
+    .lang-switcher button[data-lang="en"] { background: linear-gradient(135deg, #012169 0%, #c8102e 50%, #ffffff 100%); color: #ffffff; }
+    .lang-switcher button[data-lang="ua"] { background: linear-gradient(180deg, #0057b7 50%, #ffd700 50%); color: #111827; }
+    .lang-switcher button[data-lang="ru"] { background: linear-gradient(180deg, #ffffff 33%, #2563eb 33%, #2563eb 66%, #dc2626 66%); color: #111827; }
+
+    .lang-switcher button.active-lang {
+      box-shadow: 0 0 0 3px rgba(226,135,67,0.42), 0 10px 24px rgba(0,0,0,0.18);
+      transform: translateY(-2px) scale(1.08);
+      border-color: var(--accent);
+      outline: 2px solid rgba(226,135,67,0.28);
+    }
+
+    .nav-toggle {
+      display: none;
+      border: none;
+      background: transparent;
+      font-size: 30px;
+      color: var(--primary-dark);
+      cursor: pointer;
+    }
+
+    .menu-overlay {
+      position: fixed;
+      inset: 76px 0 0 0;
+      background: rgba(0,0,0,0.42);
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity .25s ease;
+      z-index: 900;
+    }
+
+    .menu-overlay.show {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .hero {
+      padding: 34px 0 76px;
+      background: linear-gradient(180deg, var(--primary-pale) 0%, #ffffff 100%);
+    }
+
+    .hero-media,
+    .panel-image,
+    .projects-carousel,
+    .card {
+      overflow: hidden;
+    }
+
+    .hero-media {
+      margin-bottom: 26px;
+      border-radius: 26px;
+      box-shadow: var(--shadow);
+      border: 1px solid var(--line);
+      background: #fff;
+    }
+
+    .hero-media img,
+    .panel-image img,
+    .card img,
+    .project-slide img {
+      transition: transform .55s ease, filter .45s ease;
+    }
+
+    .hero-media:hover img,
+    .panel-image:hover img,
+    .card:hover img,
+    .project-slide:hover img {
+      transform: scale(1.06);
+      filter: saturate(1.05) contrast(1.02);
+    }
+
+    .hero-media img {
+      width: 100%;
+      height: min(58vw, 560px);
+      object-fit: cover;
+    }
+
+    .hero-content {
+      max-width: 980px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .hero h1 {
+      font-size: clamp(36px, 5vw, 58px);
+      color: var(--primary-dark);
+      max-width: 980px;
+      margin-inline: auto;
+    }
+
+    .hero p {
+      color: var(--text-soft);
+      font-size: 18px;
+      max-width: 860px;
+      margin-inline: auto;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-top: 24px;
+    }
+
+    .hero-badges,
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0,1fr));
+      gap: 22px;
+    }
+
+    .hero-badges { margin-top: 28px; }
+
+    .badge,
+    .card,
+    .panel,
+    .comparison-box,
+    .contact-box,
+    .seo-article,
+    .projects-carousel {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+
+    .badge {
+      padding: 18px;
+      border: 2px solid transparent;
+      text-align: left;
+      transition: transform .25s ease, box-shadow .25s ease;
+    }
+
+    .badge:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 24px rgba(0,0,0,0.08);
+    }
+
+    .badge strong {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 6px;
+      font-size: 16px;
+    }
+
+    .badge strong::before { font-size: 18px; }
+    .badge-1 strong::before { content: "🏗️"; }
+    .badge-2 strong::before { content: "🌱"; }
+    .badge-3 strong::before { content: "📍"; }
+
+    .badge-1 {
+      border-color: var(--investment);
+      background: linear-gradient(180deg, #ffffff 0%, #f2fbfe 100%);
+    }
+
+    .badge-2 {
+      border-color: var(--eco);
+      background: linear-gradient(180deg, #ffffff 0%, #f3fbf3 100%);
+    }
+
+    .badge-3 {
+      border-color: var(--plots);
+      background: linear-gradient(180deg, #ffffff 0%, #fcf4ef 100%);
+    }
+
+    .badge-1 strong { color: #2c6f7a; }
+    .badge-2 strong { color: #2e6b1f; }
+    .badge-3 strong { color: #6a2d16; }
+
+    .card {
+      display: flex;
+      flex-direction: column;
+      transition: transform .32s ease, box-shadow .32s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 20px 36px rgba(15,23,42,0.14);
+    }
+
+    .card img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+    }
+
+    .card-body {
+      padding: 22px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      flex: 1;
+    }
+
+    .card-investments {
+      background: linear-gradient(180deg, #ffffff 0%, #f2fbfe 100%);
+      border-color: rgba(118,181,197,0.25);
+    }
+
+    .card-eco {
+      background: linear-gradient(180deg, #ffffff 0%, #f3fbf3 100%);
+      border-color: rgba(62,128,40,0.25);
+    }
+
+    .card-plots {
+      background: linear-gradient(180deg, #ffffff 0%, #fcf4ef 100%);
+      border-color: rgba(135,62,35,0.25);
+    }
+
+    .card-investments h3 { color: #2c6f7a; }
+    .card-eco h3 { color: #2e6b1f; }
+    .card-plots h3 { color: #6a2d16; }
+
+    .chip {
+      display: inline-flex;
+      align-items: center;
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: rgba(226,135,67,0.18);
+      color: #b07a2f;
+      font-size: 12px;
+      font-weight: 800;
+      width: fit-content;
+    }
+
+    .split {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 30px;
+      align-items: center;
+    }
+
+    .panel { padding: 30px; }
+
+    .panel h2,
+    .contact-box h2,
+    .project-slide-content h3 { color: var(--primary-dark); }
+
+    .panel-image {
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+
+    .panel-image img {
+      width: 100%;
+      min-height: 420px;
+      object-fit: cover;
+    }
+
+    .comparison-box { overflow-x: auto; }
+
+    .scroll-hint {
+      display: none;
+      margin: 0 auto 10px;
+      width: fit-content;
+      padding: 6px 12px;
+      border-radius: 999px;
+      background: rgba(41,108,118,0.08);
+      color: var(--text-soft);
+      font-size: 13px;
+    }
+
+    table {
+      width: 100%;
+      min-width: 860px;
+      border-collapse: collapse;
+      background: #fff;
+    }
+
+    th, td {
+      padding: 16px;
+      border: 1px solid rgba(15,23,42,0.08);
+      text-align: left;
+      vertical-align: top;
+      font-size: 15px;
+    }
+
+    th {
+      background: linear-gradient(135deg, rgba(41,108,118,0.14), rgba(226,135,67,0.18));
+      color: var(--primary-dark);
+    }
+
+    .projects-carousel {
+      position: relative;
+      max-width: 1020px;
+      margin: 0 auto;
+    }
+
+    .projects-track {
+      display: flex;
+      width: 100%;
+      transition: transform .55s ease-in-out;
+      will-change: transform;
+    }
+
+    .project-slide {
+      min-width: 100%;
+      display: grid;
+      grid-template-columns: 1.04fr .96fr;
+      align-items: stretch;
+      background: #fff;
+    }
+
+    .project-slide img {
+      width: 100%;
+      height: 430px;
+      object-fit: cover;
+    }
+
+    .project-slide-content {
+      padding: 34px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 12px;
+      background: linear-gradient(180deg, #ffffff 0%, #f9fcfd 62%, #fff9f0 100%);
+    }
+
+    .carousel-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 48px;
+      height: 48px;
+      border: none;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+      color: #fff;
+      font-size: 24px;
+      cursor: pointer;
+      z-index: 5;
+      box-shadow: 0 10px 24px rgba(31,84,92,0.22);
+      transition: transform .25s ease, box-shadow .25s ease, filter .25s ease;
+    }
+
+    .carousel-btn:hover {
+      transform: translateY(-50%) scale(1.08);
+      box-shadow: 0 16px 30px rgba(31,84,92,0.28);
+      filter: brightness(1.06);
+    }
+
+    .carousel-btn.prev { left: 16px; }
+    .carousel-btn.next { right: 16px; }
+
+    .carousel-dots {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin-top: 18px;
+    }
+
+    .carousel-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: rgba(41,108,118,0.25);
+      cursor: pointer;
+      transition: transform .22s ease, background .22s ease;
+    }
+
+    .carousel-dot:hover {
+      transform: scale(1.2);
+      background: rgba(226,135,67,0.7);
+    }
+
+    .carousel-dot.active {
+      background: var(--accent);
+      transform: scale(1.15);
+    }
+
+    .seo-articles {
+      display: grid;
+      gap: 18px;
+      max-width: 1040px;
+      margin: 0 auto;
+    }
+
+    .seo-article {
+      position: relative;
+      padding: 28px 28px 28px 34px;
+      overflow: hidden;
+    }
+
+    .seo-article::before {
+      content: "";
+      position: absolute;
+      inset: 0 auto 0 0;
+      width: 8px;
+      border-radius: 24px 0 0 24px;
+    }
+
+    .seo-article-investments {
+      background: linear-gradient(180deg, #ffffff 0%, #f2fbfe 100%);
+      border-color: rgba(118,181,197,0.28);
+    }
+
+    .seo-article-investments::before { background: var(--investment); }
+    .seo-article-investments h3 { color: #2c6f7a; }
+
+    .seo-article-eco {
+      background: linear-gradient(180deg, #ffffff 0%, #f3fbf3 100%);
+      border-color: rgba(62,128,40,0.24);
+    }
+
+    .seo-article-eco::before { background: var(--eco); }
+    .seo-article-eco h3 { color: #2e6b1f; }
+
+    .seo-article-plots {
+      background: linear-gradient(180deg, #ffffff 0%, #fcf4ef 100%);
+      border-color: rgba(135,62,35,0.26);
+    }
+
+    .seo-article-plots::before { background: var(--plots); }
+    .seo-article-plots h3 { color: #6a2d16; }
+
+    .seo-article p { margin: 0; }
+
+    .contact-box {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 36px;
+      text-align: center;
+      background: linear-gradient(180deg, #ffffff 0%, var(--primary-pale) 100%);
+    }
+
+    .contact-links {
+      display: grid;
+      gap: 12px;
+      margin: 20px 0 18px;
+    }
+
+    .contact-links a {
+      text-decoration: none;
+      font-weight: 800;
+      color: var(--primary-dark);
+      font-size: 18px;
+    }
+
+    .contact-actions {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-bottom: 24px;
+    }
+
+    .contact-form {
+      display: grid;
+      gap: 14px;
+      text-align: left;
+    }
+
+    .contact-form-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+      width: 100%;
+      padding: 15px 16px;
+      border-radius: 16px;
+      border: 1px solid rgba(15,23,42,0.12);
+      background: #ffffff;
+      color: var(--text);
+      outline: none;
+      font-family: inherit;
+      font-size: 15px;
+    }
+
+    .contact-form input:focus,
+    .contact-form textarea:focus {
+      border-color: var(--primary);
+      box-shadow: 0 0 0 4px rgba(41,108,118,0.12);
+    }
+
+    .contact-form textarea {
+      min-height: 130px;
+      resize: vertical;
+    }
+
+    .whatsapp-float {
+      position: fixed;
+      right: 18px;
+      bottom: 18px;
+      z-index: 1200;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 14px 18px;
+      border-radius: 999px;
+      background: linear-gradient(135deg, #25d366 0%, #149e48 100%);
+      color: #fff;
+      text-decoration: none;
+      font-weight: 800;
+      box-shadow: 0 12px 24px rgba(37,211,102,0.28);
+      transition: transform .25s ease;
+    }
+
+    .whatsapp-float:hover { transform: translateY(-2px); }
+
+    footer {
+      background: linear-gradient(180deg, #2596be 0%, #1f7e9f 100%);
+      padding: 34px 0 44px;
+      text-align: center;
+      color: #ffffff;
+    }
+
+    footer strong {
+      display: block;
+      margin-bottom: 10px;
+      color: #ffffff;
+      font-size: 18px;
+    }
+
+    footer p { color: rgba(255,255,255,0.85); }
+
+    @media (max-width: 980px) {
+      .nav-toggle { display: block; }
+
+      nav {
+        position: fixed;
+        top: 76px;
+        left: 0;
+        right: 0;
+        background: #fff;
+        padding: 22px;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 14px;
+        max-height: 0;
+        overflow: hidden;
+        opacity: 0;
+        transition: max-height .25s ease, opacity .25s ease;
+        box-shadow: 0 12px 26px rgba(15,23,42,0.08);
+        z-index: 1001;
+      }
+
+      nav.open {
+        max-height: 520px;
+        opacity: 1;
+      }
+    }
+
+    @media (max-width: 920px) {
+      .hero-badges,
+      .grid-3,
+      .split,
+      .contact-form-grid,
+      .project-slide {
+        grid-template-columns: 1fr;
+      }
+
+      .project-slide img { height: 280px; }
+      .project-slide-content { padding: 24px; }
+      .scroll-hint { display: block; }
+      .hero p { font-size: 16px; }
+      .hero-media img { height: 300px; }
+
+      .hero-actions,
+      .contact-actions {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .hero-actions .btn,
+      .contact-actions .btn,
+      .contact-form .btn {
+        width: 100%;
+      }
+
+      .section { padding: 72px 0; }
+      .container { width: min(var(--maxw), calc(100% - 22px)); }
+    }
+
+    @media (max-width: 560px) {
+      body { font-size: 15px; }
+      .logo { font-size: 18px; max-width: 190px; white-space: normal; line-height: 1.15; }
+      .header-inner { min-height: 70px; }
+      .hero { padding: 20px 0 60px; }
+      .hero h1 { font-size: clamp(30px, 9vw, 42px); }
+      .hero-media { border-radius: 18px; }
+
+      .badge,
+      .panel,
+      .contact-box,
+      .card-body,
+      .project-slide-content,
+      .seo-article {
+        padding: 18px;
+      }
+
+      .carousel-btn { width: 42px; height: 42px; }
+
+      .contact-form input,
+      .contact-form textarea { padding: 14px; }
+
+      .whatsapp-float {
+        right: 12px;
+        bottom: 12px;
+        padding: 12px 15px;
+        font-size: 14px;
+      }
+    }
+    /* === Custom section colors === */
+  .section-green { background: linear-gradient(180deg, #ffffff 0%, #eef8ea 100%); }
+  .section-plots { background: linear-gradient(180deg, #ffffff 0%, #fcf4ef 100%); }
+  .section-developers { background: linear-gradient(180deg, #ffffff 0%, #f2fbfe 100%); }
+  .section-developers .section-title h2 { color: #2c6f7a; }
+  .section-green .section-title h2 { color: #2e6b1f; }
+  .section-plots .section-title h2 { color: #6a2d16; }
+  .section-developers .chip { background: rgba(118,181,197,0.18); color: #2c6f7a; }
+  .section-green .chip { background: rgba(62,128,40,0.14); color: #2e6b1f; }
+  .section-plots .chip { background: rgba(135,62,35,0.12); color: #6a2d16; }
+  .priority-note {
+    max-width: 820px;
+    margin: 0 auto 26px;
+    text-align: center;
+    font-size: 17px;
+  }
+  .whatsapp-float,
+  .btn-whatsapp {
+    pointer-events: auto;
+  }
+
+</style>
+</head>
+<body>
+  <div class="menu-overlay"></div>
+
+  <header>
+    <div class="container header-inner">
+      <a href="#hero" class="logo">Costa Blanca Invest &amp; Build</a>
+      <div class="nav-wrap">
+        <button class="nav-toggle" aria-label="Menu">☰</button>
+        <nav>
+          <a href="#hero" data-i18n="nav_home">Start</a>
+          <a href="#developers" data-i18n="nav_developers">Nowe inwestycje</a>
+          <a href="#technology" data-i18n="nav_technology">Budowa domów</a>
+          <a href="#plots" data-i18n="nav_plots">Działki</a>
+          <a href="#comparison" data-i18n="nav_comparison">Technologie</a>
+          <a href="#contact" data-i18n="nav_contact">Kontakt</a>
+        </nav>
+        <div class="lang-switcher">
+          <button data-lang="ru">RU</button>
+          <button data-lang="pl" class="active-lang">PL</button>
+          <button data-lang="en">EN</button>
+          <button data-lang="ua">UA</button>
+          <button data-lang="es">ES</button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero section" id="hero">
+      <div class="container">
+        <div class="hero-media">
+          <img src="images/hero-sea-palm.jpg" alt="Nowoczesny parterowy dom przy morzu i palmach na Costa Blanca w Hiszpanii">
+        </div>
+        <div class="hero-content">
+          <span class="eyebrow" data-i18n="hero_eyebrow">🇪🇸 Costa Blanca · inwestycje, działki i budowa domów</span>
+          <h1 data-i18n="hero_title">Inwestycje w Hiszpanii — działki, nowe inwestycje i budowa domów na Costa Blanca</h1>
+          <p data-i18n="hero_text">Łączymy trzy filary oferty w jednym serwisie: nowe inwestycje od deweloperów, działki budowlane oraz budowę domów w Hiszpanii. Dzięki temu klient od razu widzi pełną ścieżkę inwestycji na Costa Blanca.</p>
+          <p data-i18n="hero_text_2">Pomagamy dobrać odpowiedni kierunek — od zakupu działki lub wejścia w nową inwestycję po realizację domu drewnianego, szkieletowego lub Thermochip, wraz z fundamentami, remontem i premium wykończeniem wnętrz.</p>
+          <div class="hero-actions">
+            <a class="btn btn-main" href="#contact" data-i18n="hero_btn_1">Zapytaj o inwestycję</a>
+            <a class="btn btn-light" href="#comparison" data-i18n="hero_btn_2">Porównaj technologie</a>
+          </div>
+          <div class="hero-badges">
+            <article class="badge badge-1">
+              <strong data-i18n="badge_1_title">Nowe inwestycje</strong>
+              <span data-i18n="badge_1_text">Nowe projekty od deweloperów na Costa Blanca dla klientów z Polski.</span>
+            </article>
+            <article class="badge badge-2">
+              <strong data-i18n="badge_2_title">Eko domy</strong>
+              <span data-i18n="badge_2_text">Domy drewniane, szkieletowe i Thermochip — nowoczesne, energooszczędne i dopasowane do klimatu Hiszpanii.</span>
+            </article>
+            <article class="badge badge-3">
+              <strong data-i18n="badge_3_title">Działki pod zabudowę</strong>
+              <span data-i18n="badge_3_text">Działki pod zabudowę prywatną i inwestycyjną — z analizą lokalizacji, możliwości budowy i połączeniem z realizacją domu.</span>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-developers" id="developers">
+      <div class="container">
+        <header class="section-title">
+          <h2 data-i18n="developers_title">Nowe inwestycje od deweloperów — priorytet nr 1</h2>
+          <p data-i18n="developers_text">Główny kierunek oferty to nowe inwestycje na Costa Blanca: apartamenty i wille od sprawdzonych deweloperów. Skupiamy się na projektach, które mają dobrą lokalizację, wysoki standard, potencjał wzrostu wartości oraz realne możliwości wynajmu lub dalszej odsprzedaży.</p>
+        </header>
+        <p class="priority-note" data-i18n="developers_note">Współpracujemy wyłącznie ze sprawdzonymi deweloperami i partnerami z doświadczeniem na rynku hiszpańskim, dlatego klient otrzymuje bezpieczniejszą selekcję projektów i czytelniejszą ścieżkę zakupu.</p>
+        <div class="grid-3">
+          <article class="card card-investments">
+            <img src="images/wood-advantage-1.jpg" loading="lazy" alt="Nowe inwestycje deweloperskie na Costa Blanca w Hiszpanii">
+            <div class="card-body">
+              <div class="chip" data-i18n="dev_chip_1">Deweloperzy</div>
+              <h3 data-i18n="dev_title_1">Sprawdzone projekty na Costa Blanca</h3>
+              <p data-i18n="dev_text_1">Wybieramy inwestycje od partnerów, którzy mają doświadczenie, historię realizacji oraz projekty dobrze oceniane przez rynek i klientów zagranicznych.</p>
+            </div>
+          </article>
+          <article class="card card-investments">
+            <img src="images/new-dev.jpg" loading="lazy" alt="Apartamenty i wille od deweloperów w Hiszpanii na Costa Blanca">
+            <div class="card-body">
+              <div class="chip" data-i18n="dev_chip_2">Lokalizacja</div>
+              <h3 data-i18n="dev_title_2">Mocne położenie i potencjał inwestycyjny</h3>
+              <p data-i18n="dev_text_2">Liczy się nie tylko sam projekt, ale także lokalizacja, infrastruktura, styl życia oraz potencjał wzrostu wartości i wynajmu krótkoterminowego.</p>
+            </div>
+          </article>
+          <article class="card card-investments">
+            <img src="images/premium-investment.jpg" loading="lazy" alt="Nowe nieruchomości premium w Hiszpanii pod inwestycję">
+            <div class="card-body">
+              <div class="chip" data-i18n="dev_chip_3">Selekcja</div>
+              <h3 data-i18n="dev_title_3">Bezpieczniejszy wybór dla klienta</h3>
+              <p data-i18n="dev_text_3">Pokazujemy projekty, które mają sens zarówno dla klienta kupującego pod siebie, jak i dla inwestora szukającego jakości, bezpieczeństwa i płynności wyjścia.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-green" id="technology">
+      <div class="container">
+        <header class="section-title">
+          <h2 data-i18n="technology_title">Budowa domów — priorytet nr 2</h2>
+          <p data-i18n="technology_text">Drugim filarem oferty jest budowa domów w Hiszpanii w technologiach drewnianych, szkieletowych i Thermochip. To kierunek dla klientów, którzy chcą połączyć własną działkę lub zakupiony grunt z nowoczesną, energooszczędną i szybką realizacją.</p>
+        </header>
+        <p class="priority-note" data-i18n="technology_note">Budowa domu na Costa Blanca wymaga dobrego dopasowania technologii do działki, klimatu, celu inwestycyjnego oraz standardu wykończenia. Dlatego pokazujemy ten kierunek jako osobny, ekspercki blok.</p>
+        <div class="split">
+          <article class="panel">
+            <h2 data-i18n="tech_block_title">Co obejmuje realizacja</h2>
+            <ul>
+              <li data-i18n="tech_li_1">analizę działki i dopasowanie projektu do warunków gruntu,</li>
+              <li data-i18n="tech_li_2">dobór technologii: drewnianej, szkieletowej lub Thermochip,</li>
+              <li data-i18n="tech_li_3">fundamenty dowolnej złożoności, instalacje i przygotowanie terenu,</li>
+              <li data-i18n="tech_li_4">budowę domu w standardzie dopasowanym do klienta i inwestycji,</li>
+              <li data-i18n="tech_li_5">remonty pod klucz, premium wykończenie wnętrz i przygotowanie domu do użytkowania lub wynajmu.</li>
+            </ul>
+            <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:18px;">
+              <a class="btn btn-main" href="#contact" data-i18n="tech_btn_1">Zapytaj o realizację</a>
+              <a class="btn btn-light" href="#comparison" data-i18n="tech_btn_2">Zobacz porównanie technologii</a>
+            </div>
+          </article>
+          <div class="panel-image">
+            <img src="images/wood-technology.jpg" loading="lazy" alt="Technologie budowy domów drewnianych, szkieletowych i Thermochip w Hiszpanii">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-sand" id="comparison">
+      <div class="container">
+        <header class="section-title">
+          <h2 data-i18n="comparison_title">Porównanie: dom drewniany, dom szkieletowy i Thermochip</h2>
+          <p data-i18n="comparison_text">Klient powinien od razu zobaczyć, czym różnią się główne kierunki budowy domu w Hiszpanii i które rozwiązanie najlepiej odpowiada jego celowi.</p>
+        </header>
+        <div class="scroll-hint" data-i18n="scroll_hint">💡 Przesuń tabelę w prawo →</div>
+        <div class="comparison-box">
+          <table>
+            <thead>
+              <tr>
+                <th data-i18n="table_param">Parametr</th>
+                <th data-i18n="table_wood">Dom drewniany</th>
+                <th data-i18n="table_timber">Dom szkieletowy</th>
+                <th data-i18n="table_thermo">Thermochip</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td data-i18n="row1_param">Charakter produktu</td>
+                <td data-i18n="row1_wood">Naturalny, estetyczny i premium, mocny dla lifestyle i prywatnej rezydencji</td>
+                <td data-i18n="row1_timber">Uniwersalny i elastyczny wybór dla różnych budżetów i układów działki</td>
+                <td data-i18n="row1_thermo">Nowoczesny, energooszczędny system dla szybkiej i przewidywalnej realizacji</td>
+              </tr>
+              <tr>
+                <td data-i18n="row2_param">Komfort i parametry</td>
+                <td data-i18n="row2_wood">Przyjemny mikroklimat i naturalny charakter wnętrza</td>
+                <td data-i18n="row2_timber">Dobra izolacja i szerokie możliwości dopasowania konstrukcji</td>
+                <td data-i18n="row2_thermo">Wysoka efektywność energetyczna i stabilny standard użytkowania</td>
+              </tr>
+              <tr>
+                <td data-i18n="row3_param">Tempo i elastyczność</td>
+                <td data-i18n="row3_wood">Świetny wybór dla klientów ceniących styl i wizerunek domu</td>
+                <td data-i18n="row3_timber">Dobry balans między czasem realizacji, budżetem i funkcjonalnością</td>
+                <td data-i18n="row3_thermo">Najmocniejszy kierunek dla inwestorów szukających szybkości i nowoczesności</td>
+              </tr>
+              <tr>
+                <td data-i18n="row4_param">Najlepsze zastosowanie</td>
+                <td data-i18n="row4_wood">Dom wakacyjny, premium rental, prywatny dom w naturalnym stylu</td>
+                <td data-i18n="row4_timber">Dom całoroczny, inwestycja, działka prywatna</td>
+                <td data-i18n="row4_thermo">Energooszczędny dom z szybkim terminem realizacji</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-plots" id="plots">
+      <div class="container">
+        <header class="section-title">
+          <h2 data-i18n="plots_title">Działki pod zabudowę — priorytet nr 3</h2>
+          <p data-i18n="plots_text">Trzecim kierunkiem są działki budowlane na Costa Blanca. To rozwiązanie dla klientów, którzy chcą wejść w rynek od gruntu, zbudować własny dom lub połączyć zakup ziemi z późniejszą realizacją inwestycji.</p>
+        </header>
+        <p class="priority-note" data-i18n="plots_note">Każda działka powinna być analizowana nie tylko pod kątem ceny, ale także możliwości zabudowy, lokalizacji, mediów, potencjału wzrostu i dopasowania do przyszłego projektu domu.</p>
+        <div class="grid-3">
+          <article class="card card-plots">
+            <img src="images/plot.jpg" loading="lazy" alt="Działki budowlane na Costa Blanca w Hiszpanii">
+            <div class="card-body">
+              <div class="chip" data-i18n="plot_chip_1">Działki</div>
+              <h3 data-i18n="plot_title_1">Grunt pod dom lub inwestycję</h3>
+              <p data-i18n="plot_text_1">Pokazujemy działki, które mają realny sens inwestycyjny i dają możliwość dalszej budowy domu lub realizacji prywatnego projektu.</p>
+            </div>
+          </article>
+          <article class="card card-plots">
+            <img src="images/plot-investment.jpg" loading="lazy" alt="Działka inwestycyjna w Hiszpanii na Costa Blanca">
+            <div class="card-body">
+              <div class="chip" data-i18n="plot_chip_2">Analiza</div>
+              <h3 data-i18n="plot_title_2">Potencjał zabudowy i lokalizacji</h3>
+              <p data-i18n="plot_text_2">Sprawdzamy możliwości budowy, otoczenie, media i dopasowanie działki do planowanego domu lub strategii inwestycyjnej.</p>
+            </div>
+          </article>
+          <article class="card card-plots">
+            <img src="images/plot-build.jpg" loading="lazy" alt="Działka pod budowę domu w Hiszpanii">
+            <div class="card-body">
+              <div class="chip" data-i18n="plot_chip_3">Połączenie</div>
+              <h3 data-i18n="plot_title_3">Działka + projekt + budowa</h3>
+              <p data-i18n="plot_text_3">Łączymy grunt z kolejnym krokiem: projektem domu, doborem technologii, fundamentami i realizacją pod klucz.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-soft" id="projects">
+      <div class="container">
+        <header class="section-title">
+          <h2 data-i18n="projects_title">Przykładowe kierunki projektowe</h2>
+          <p data-i18n="projects_text">Karuzela pokazuje różne formaty domu w Hiszpanii — od domu naturalnego i premium po rozwiązania inwestycyjne i nowoczesne układy dla Costa Blanca.</p>
+        </header>
+        <div class="projects-carousel">
+          <button class="carousel-btn prev" aria-label="Previous project">❮</button>
+          <div class="projects-track">
+            <article class="project-slide">
+              <img src="images/wood-project-1.jpg" loading="lazy" alt="Nowoczesny dom w Hiszpanii w naturalnym stylu na Costa Blanca">
+              <div class="project-slide-content">
+                <div class="chip" data-i18n="proj_chip_1">Drewniany</div>
+                <h3 data-i18n="proj_title_1">Nowoczesny dom w naturalnym stylu</h3>
+                <p data-i18n="proj_text_1">Projekt łączący drewno, duże przeszklenia i układ idealny do życia przez cały rok lub sezonowego użytkowania.</p>
+                <p data-i18n="proj_desc_1">Ten typ domu świetnie sprawdza się na działkach prywatnych na Costa Blanca, gdzie liczy się estetyka, lekkość bryły i komfort codziennego życia.</p>
+              </div>
+            </article>
+            <article class="project-slide">
+              <img src="images/wood-project-2.jpg" loading="lazy" alt="Dom premium na Costa Blanca z potencjałem inwestycyjnym">
+              <div class="project-slide-content">
+                <div class="chip" data-i18n="proj_chip_2">Premium</div>
+                <h3 data-i18n="proj_title_2">Dom premium pod Costa Blanca lifestyle</h3>
+                <p data-i18n="proj_text_2">Wyższy standard, tarasy, strefy relaksu i wykończenie, które dobrze pracuje także pod wynajem krótkoterminowy.</p>
+                <p data-i18n="proj_desc_2">To kierunek dla klientów, którzy chcą połączyć prywatność, jakość, dobre wnętrza i silny efekt wizualny w jednej inwestycji.</p>
+              </div>
+            </article>
+            <article class="project-slide">
+              <img src="images/wood-project-3.jpg" loading="lazy" alt="Dom inwestycyjny w Hiszpanii na Costa Blanca">
+              <div class="project-slide-content">
+                <div class="chip" data-i18n="proj_chip_3">Inwestycyjny</div>
+                <h3 data-i18n="proj_title_3">Model inwestycyjny</h3>
+                <p data-i18n="proj_text_3">Dom projektowany z myślą o promocji, wynajmie lub sprzedaży — z mocnym wizerunkiem i dobrym potencjałem rynkowym.</p>
+                <p data-i18n="proj_desc_3">Silny efekt wizualny, wysoki standard i przemyślana technologia sprawiają, że taki dom dobrze przyciąga klientów zainteresowanych wypoczynkiem i inwestycją w Hiszpanii.</p>
+              </div>
+            </article>
+          </div>
+          <button class="carousel-btn next" aria-label="Next project">❯</button>
+        </div>
+        <div class="carousel-dots">
+          <span class="carousel-dot active" data-slide="0"></span>
+          <span class="carousel-dot" data-slide="1"></span>
+          <span class="carousel-dot" data-slide="2"></span>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-green" id="process">
+      <div class="container">
+        <header class="section-title">
+          <h2 data-i18n="process_title">Jak wygląda współpraca</h2>
+          <p data-i18n="process_text">Prowadzimy klienta etapami, aby proces zakupu działki, budowy domu, remontu i wykończenia w Hiszpanii był zrozumiały, wygodny i bezpieczny.</p>
+        </header>
+        <div class="grid-3">
+          <article class="card card-investments">
+            <img src="images/wood-process-1.jpg" loading="lazy" alt="Wybór działki i analiza projektu domu w Hiszpanii">
+            <div class="card-body">
+              <div class="chip">1</div>
+              <h3 data-i18n="proc_title_1">Wybór działki i analiza</h3>
+              <p data-i18n="proc_text_1">Sprawdzamy lokalizację, potencjał działki, warunki zabudowy i dobór właściwej technologii budowy.</p>
+            </div>
+          </article>
+          <article class="card card-eco">
+            <img src="images/wood-process-2.jpg" loading="lazy" alt="Projekt, technologia i fundamenty domu na Costa Blanca">
+            <div class="card-body">
+              <div class="chip">2</div>
+              <h3 data-i18n="proc_title_2">Projekt, technologia i fundamenty</h3>
+              <p data-i18n="proc_text_2">Dobieramy układ, standard, technologię oraz rozwiązania konstrukcyjne i fundamentowe odpowiednie dla inwestycji.</p>
+            </div>
+          </article>
+          <article class="card card-plots">
+            <img src="images/wood-process-3.jpg" loading="lazy" alt="Wykończenie domu pod klucz w Hiszpanii">
+            <div class="card-body">
+              <div class="chip">3</div>
+              <h3 data-i18n="proc_title_3">Realizacja, remont i premium wnętrza</h3>
+              <p data-i18n="proc_text_3">Kończymy budowę, instalacje, prace wykończeniowe i przygotowanie domu do zamieszkania, wynajmu lub sprzedaży.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-sand" id="seo">
+      <div class="container">
+        <header class="section-title">
+          <h2 data-i18n="seo_title">Inwestycje w Hiszpanii — rynek, który łączy deweloperów, budowę i działki</h2>
+          <p data-i18n="seo_text">Costa Blanca to jeden z najbardziej dynamicznych regionów nieruchomości w Europie. Rosnący popyt na nowe projekty, ograniczona podaż dobrej ziemi oraz rozwój nowoczesnych technologii budowy sprawiają, że rynek Hiszpanii daje realne możliwości zarówno dla klientów prywatnych, jak i inwestorów szukających bezpieczeństwa i potencjału wzrostu.</p>
+        </header>
+        <div class="seo-articles" aria-label="SEO topics">
+          <section class="seo-article seo-article-investments">
+            <h3 data-i18n="seo_card_1_title">Nowe inwestycje od sprawdzonych deweloperów</h3>
+            <p data-i18n="seo_card_1_text">Współpracujemy ze sprawdzonymi deweloperami, którzy mają doświadczenie, historię realizacji i projekty odpowiadające na aktualny popyt rynku. Dzięki temu klient otrzymuje lepiej wyselekcjonowane inwestycje z mocną lokalizacją, dobrym standardem oraz większym potencjałem wzrostu wartości.</p>
+          </section>
+
+    <section class="section section-soft" id="contact">
+      <div class="container">
+        <div class="contact-box">
+          <h2 data-i18n="contact_title">Zapytaj o inwestycje, działki lub budowę domu w Hiszpanii</h2>
+          <p data-i18n="contact_text">Doradzamy przy nowych inwestycjach od deweloperów, działkach budowlanych oraz budowie domów na Costa Blanca. Skontaktuj się z nami, aby otrzymać ofertę dopasowaną do celu inwestycyjnego, budżetu i lokalizacji.</p>
+          <div class="contact-links">
+            <a href="tel:+34604158859">+34 604 15 88 59</a>
+            <a href="mailto:o.czernyszenko@gmail.com">o.czernyszenko@gmail.com</a>
+          </div>
+          <div class="contact-actions">
+            <a class="btn btn-main" href="tel:+34604158859" data-i18n="contact_call">Zadzwoń teraz</a>
+            <a class="btn btn-light btn-whatsapp" href="https://wa.me/34604158859" target="_blank" rel="noopener" data-i18n="contact_whatsapp">Napisz na WhatsApp</a>
+          </div>
+          <form class="contact-form" id="contact-form" action="#" method="post">
+            <div class="contact-form-grid">
+              <input type="text" name="name" placeholder="Twoje imię" data-i18n-placeholder="form_name" required>
+              <input type="tel" name="phone" placeholder="Telefon / WhatsApp" data-i18n-placeholder="form_phone" required>
+            </div>
+            <input type="email" name="email" placeholder="Email" data-i18n-placeholder="form_email">
+            <textarea name="message" placeholder="Napisz, jaki dom lub projekt Cię interesuje i czy masz już działkę" data-i18n-placeholder="form_message"></textarea>
+            <button class="btn btn-main" type="submit" data-i18n="form_button">Wyślij zapytanie</button>
+          </form>
+        </div>
+      </div>
+    </section>
+  
+
+    <section class="section section-soft" id="faq">
+      <div class="container">
+        <header class="section-title">
+          <h2 data-i18n="faq_title">FAQ — inwestycje w Hiszpanii i Costa Blanca</h2>
+          <p data-i18n="faq_text">Najczęstsze pytania klientów dotyczące zakupu działki, budowy domu i inwestowania w nieruchomości w Hiszpanii.</p>
+        </header>
+        <div class="seo-articles">
+          <section class="seo-article seo-article-investments">
+            <h3 data-i18n="faq_q1">Czy warto inwestować w nieruchomości na Costa Blanca?</h3>
+            <p data-i18n="faq_a1">Tak — Costa Blanca to jeden z najstabilniejszych regionów w Hiszpanii pod względem inwestycji w nieruchomości. Wysoki popyt turystyczny i rosnący rynek najmu krótkoterminowego zwiększają potencjał ROI.</p>
+          </section>
+          <section class="seo-article seo-article-eco">
+            <h3 data-i18n="faq_q2">Ile kosztuje budowa domu w Hiszpanii?</h3>
+            <p data-i18n="faq_a2">Koszt budowy domu zależy od technologii, lokalizacji i standardu wykończenia. Średnio ceny zaczynają się od 1200–1800 €/m², ale finalny budżet zależy od projektu, fundamentów i poziomu wykończenia.</p>
+          </section>
+          <section class="seo-article seo-article-plots">
+            <h3 data-i18n="faq_q3">Czy obcokrajowiec może kupić działkę w Hiszpanii?</h3>
+            <p data-i18n="faq_a3">Tak, obcokrajowcy mogą bez ograniczeń kupować nieruchomości i działki w Hiszpanii. Wymagany jest numer NIE, konto bankowe i prawidłowa analiza dokumentów przed zakupem.</p>
+          </section>
+        </div>
+      </div>
+    </section>
+
+  
+
+    <!-- INTERNAL SEO LANDING LINKS (NEXT LEVEL SEO) -->
+    <section class="section section-soft" id="seo-links">
+      <div class="container">
+        <header class="section-title">
+          <h2 data-i18n="seo_links_title">Kluczowe kierunki inwestycji na Costa Blanca</h2>
+          <p data-i18n="seo_links_text">Wejdź w wybrany segment rynku — każda sekcja prowadzi do dedykowanej strony SEO zoptymalizowanej pod konkretne zapytania klientów.</p>
+        </header>
+        <div class="grid-3">
+          <a href="/plots-costa-blanca" class="card card-plots" style="text-decoration:none;">
+            <img src="images/plot.jpg" alt="Działki budowlane na Costa Blanca w Hiszpanii pod inwestycje i budowę domu">
+            <div class="card-body">
+              <h3 data-i18n="seo_link_1_title">Działki Costa Blanca</h3>
+              <p data-i18n="seo_link_1_text">Najlepsze działki budowlane w Hiszpanii — pod inwestycję, budowę domu lub development.</p>
+            </div>
+          </a>
+
+          <a href="/eco-houses-spain" class="card card-eco" style="text-decoration:none;">
+            <img src="images/eco-house.jpg" alt="Nowoczesne eko domy w Hiszpanii Costa Blanca budowa domów energooszczędnych">
+            <div class="card-body">
+              <h3 data-i18n="seo_link_2_title">Eko domy Hiszpania</h3>
+              <p data-i18n="seo_link_2_text">Budowa nowoczesnych, energooszczędnych domów w Hiszpanii — drewno, szkielet i Thermochip.</p>
+            </div>
+          </a>
+
+          <a href="/new-developments-costa-blanca" class="card card-investments" style="text-decoration:none;">
+            <img src="images/new-dev.jpg" alt="Nowe inwestycje deweloperskie Costa Blanca apartamenty i wille w Hiszpanii">
+            <div class="card-body">
+              <h3 data-i18n="seo_link_3_title">Nowe inwestycje</h3>
+              <p data-i18n="seo_link_3_text">Nowe projekty deweloperskie na Costa Blanca — apartamenty i wille pod inwestycję.</p>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <a href="https://wa.me/34604158859" class="whatsapp-float" target="_blank" rel="noopener" aria-label="WhatsApp">WhatsApp</a>
+
+  <footer>
+    <div class="container">
+      <strong data-i18n="footer_title">Costa Blanca Invest &amp; Build</strong>
+      <p data-i18n="footer_text">Inwestycje w Hiszpanii na Costa Blanca — działki budowlane, budowa domów, technologie drewniane, szkieletowe i Thermochip, fundamenty, remonty pod klucz i premium wykończenia.</p>
+      <p data-i18n="footer_meta">© 2026 | Strona stworzona przez Olga Chernyshenko — specjalista ds. nieruchomości w Polsce i Hiszpanii.</p>
+    </div>
+  </footer>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://example.com/#organization",
+        "name": "Costa Blanca Invest & Build",
+        "url": "https://example.com/costa-blanca-invest-build.html",
+        "logo": "https://example.com/images/favicon.png",
+        "email": "o.czernyszenko@gmail.com",
+        "telephone": "+34604158859"
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://example.com/#website",
+        "url": "https://example.com/costa-blanca-invest-build.html",
+        "name": "Costa Blanca Invest & Build",
+        "publisher": { "@id": "https://example.com/#organization" },
+        "inLanguage": "pl"
+      },
+      {
+        "@type": "WebPage",
+        "@id": "https://example.com/costa-blanca-invest-build.html#webpage",
+        "url": "https://example.com/costa-blanca-invest-build.html",
+        "name": "Costa Blanca Invest & Build | Inwestycje w Hiszpanii, działki i budowa domów",
+        "description": "Inwestycje w Hiszpanii na Costa Blanca: nowe inwestycje od deweloperów, działki budowlane, budowa domów drewnianych, szkieletowych i Thermochip, fundamenty, remonty i premium wykończenia.",
+        "isPartOf": { "@id": "https://example.com/#website" },
+        "about": { "@id": "https://example.com/#organization" },
+        "primaryImageOfPage": {
+          "@type": "ImageObject",
+          "url": "https://example.com/images/og-cover.jpg"
+        },
+        "inLanguage": "pl"
+      },
+      {
+        "@type": "LocalBusiness",
+        "@id": "https://example.com/#localbusiness",
+        "name": "Costa Blanca Invest & Build",
+        "areaServed": "Costa Blanca, Spain",
+        "telephone": "+34604158859",
+        "email": "o.czernyszenko@gmail.com",
+        "url": "https://example.com/costa-blanca-invest-build.html",
+        "description": "Inwestycje w Hiszpanii na Costa Blanca: nowe inwestycje od deweloperów, działki budowlane, budowa domów drewnianych, szkieletowych i Thermochip, fundamenty, remonty i premium wykończenia.",
+        "serviceType": [
+          "New developments in Spain",
+          "Building plots",
+          "House construction",
+          "Wooden houses",
+          "Timber-frame houses",
+          "Thermochip houses",
+          "Turnkey renovation",
+          "Premium interior finishing",
+          "Complex foundations"
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <!-- FAQ Schema for SEO -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Czy warto inwestować w nieruchomości na Costa Blanca?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Tak — Costa Blanca to jeden z najbardziej stabilnych regionów inwestycyjnych w Hiszpanii, z wysokim popytem turystycznym i dużym potencjałem wynajmu krótkoterminowego."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Ile kosztuje budowa domu w Hiszpanii?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Koszt budowy domu w Hiszpanii zależy od technologii, lokalizacji i standardu, ale średnio wynosi od 1200 do 1800 euro za metr kwadratowy."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Czy obcokrajowiec może kupić działkę w Hiszpanii?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Tak, obcokrajowcy mogą bez ograniczeń kupować nieruchomości i działki w Hiszpanii. Wymagany jest numer NIE, konto bankowe i prawidłowa analiza dokumentów przed zakupem."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Costa Blanca Invest & Build",
+        "item": "https://example.com/pl/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Inwestycje w Hiszpanii",
+        "item": "https://example.com/pl/#seo"
+      }
+    ]
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "serviceType": "Real estate investment and house construction in Spain",
+    "provider": {
+      "@type": "Organization",
+      "name": "Costa Blanca Invest & Build",
+      "url": "https://example.com/pl/"
+    },
+    "areaServed": {
+      "@type": "Place",
+      "name": "Costa Blanca, Spain"
+    },
+    "availableLanguage": ["pl", "en", "es", "ru", "uk"],
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Main services",
+      "itemListElement": [
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "New developments from developers"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Building plots on Costa Blanca"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Wooden, timber-frame and Thermochip house construction"
+          }
+        }
+      ]
+    }
+  }
+  </script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const BUILD_LANG = 'pl';
+      const siteBase = 'https://example.com';
+
+      const localeMeta = {
+        pl: {
+          htmlLang: 'pl', locale: 'pl_PL', path: '/pl/',
+          title: 'Costa Blanca Invest & Build | Inwestycje w Hiszpanii, działki i budowa domów',
+          description: 'Costa Blanca Invest & Build — inwestycje w Hiszpanii na Costa Blanca: nowe inwestycje od deweloperów, działki pod zabudowę oraz budowa domów drewnianych, szkieletowych i Thermochip. Fundamenty, remonty pod klucz i premium wykończenia wnętrz.',
+          ogTitle: 'Costa Blanca Invest & Build | Inwestycje w Hiszpanii, działki i budowa domów',
+          ogDescription: 'Nowe inwestycje od deweloperów, działki pod zabudowę i budowa domów na Costa Blanca dla klientów z Polski.',
+          twitterTitle: 'Costa Blanca Invest & Build | Inwestycje w Hiszpanii',
+          twitterDescription: 'Działki, nowe inwestycje i budowa domów na Costa Blanca.'
+        },
+        en: {
+          htmlLang: 'en', locale: 'en_GB', path: '/en/',
+          title: 'Costa Blanca Invest & Build | Property investment, plots and house construction in Spain',
+          description: 'Property investment on the Costa Blanca: new developments, building plots and wooden, timber-frame and Thermochip house construction in Spain.',
+          ogTitle: 'Costa Blanca Invest & Build | Property investment in Spain',
+          ogDescription: 'New developments, plots and house construction on the Costa Blanca.',
+          twitterTitle: 'Costa Blanca Invest & Build | Property investment in Spain',
+          twitterDescription: 'New developments, plots and house construction on the Costa Blanca.'
+        },
+        es: {
+          htmlLang: 'es', locale: 'es_ES', path: '/es/',
+          title: 'Costa Blanca Invest & Build | Inversión, parcelas y construcción en España',
+          description: 'Inversión inmobiliaria en la Costa Blanca: obra nueva, parcelas urbanizables y construcción de casas de madera, entramado ligero y Thermochip.',
+          ogTitle: 'Costa Blanca Invest & Build | Inversión en España',
+          ogDescription: 'Obra nueva, parcelas y construcción de casas en la Costa Blanca.',
+          twitterTitle: 'Costa Blanca Invest & Build | Inversión en España',
+          twitterDescription: 'Obra nueva, parcelas y construcción de casas en la Costa Blanca.'
+        },
+        ru: {
+          htmlLang: 'ru', locale: 'ru_RU', path: '/ru/',
+          title: 'Costa Blanca Invest & Build | Инвестиции, участки и строительство домов в Испании',
+          description: 'Инвестиции на Costa Blanca: новостройки, участки под застройку и строительство деревянных, каркасных и Thermochip домов в Испании.',
+          ogTitle: 'Costa Blanca Invest & Build | Инвестиции в Испании',
+          ogDescription: 'Новостройки, участки и строительство домов на Costa Blanca.',
+          twitterTitle: 'Costa Blanca Invest & Build | Инвестиции в Испании',
+          twitterDescription: 'Новостройки, участки и строительство домов на Costa Blanca.'
+        },
+        ua: {
+          htmlLang: 'uk', locale: 'uk_UA', path: '/ua/',
+          title: 'Costa Blanca Invest & Build | Інвестиції, ділянки та будівництво будинків в Іспанії',
+          description: 'Інвестиції на Costa Blanca: новобудови, ділянки під забудову та будівництво дерев’яних, каркасних і Thermochip будинків в Іспанії.',
+          ogTitle: 'Costa Blanca Invest & Build | Інвестиції в Іспанії',
+          ogDescription: 'Новобудови, ділянки та будівництво будинків на Costa Blanca.',
+          twitterTitle: 'Costa Blanca Invest & Build | Інвестиції в Іспанії',
+          twitterDescription: 'Новобудови, ділянки та будівництво будинків на Costa Blanca.'
+        }
+      };
+
+      const translations = {
+        pl: {
+          nav_home: 'Start', nav_developers: 'Nowe inwestycje', nav_technology: 'Budowa domów', nav_plots: 'Działki', nav_comparison: 'Technologie', nav_contact: 'Kontakt',
+          hero_eyebrow: '🇪🇸 Costa Blanca · inwestycje, działki i budowa domów', hero_title: 'Inwestycje w Hiszpanii — działki, nowe inwestycje i budowa domów na Costa Blanca', hero_text: 'Łączymy trzy filary oferty w jednym serwisie: nowe inwestycje od deweloperów, działki budowlane oraz budowę domów w Hiszpanii. Dzięki temu klient od razu widzi pełną ścieżkę inwestycji na Costa Blanca.', hero_text_2: 'Pomagamy dobrać odpowiedni kierunek — od zakupu działki lub wejścia w nową inwestycję po realizację domu drewnianego, szkieletowego lub Thermochip, wraz z fundamentami, remontem i premium wykończeniem wnętrz.', hero_btn_1: 'Zapytaj o inwestycję', hero_btn_2: 'Porównaj technologie',
+          badge_1_title: 'Nowe inwestycje', badge_1_text: 'Nowe projekty od deweloperów na Costa Blanca dla klientów z Polski.', badge_2_title: 'Eko domy', badge_2_text: 'Domy drewniane, szkieletowe i Thermochip — nowoczesne, energooszczędne i dopasowane do klimatu Hiszpanii.', badge_3_title: 'Działki pod zabudowę', badge_3_text: 'Działki pod zabudowę prywatną i inwestycyjną — z analizą lokalizacji, możliwości budowy i połączeniem z realizacją domu.',
+          developers_title: 'Nowe inwestycje od deweloperów — priorytet nr 1', developers_text: 'Główny kierunek oferty to nowe inwestycje na Costa Blanca: apartamenty i wille od sprawdzonych deweloperów. Skupiamy się na projektach, które mają dobrą lokalizację, wysoki standard, potencjał wzrostu wartości oraz realne możliwości wynajmu lub dalszej odsprzedaży.', developers_note: 'Współpracujemy wyłącznie ze sprawdzonymi deweloperami i partnerami z doświadczeniem na rynku hiszpańskim, dlatego klient otrzymuje bezpieczniejszą selekcję projektów i czytelniejszą ścieżkę zakupu.', dev_chip_1: 'Deweloperzy', dev_title_1: 'Sprawdzone projekty na Costa Blanca', dev_text_1: 'Wybieramy inwestycje od partnerów, którzy mają doświadczenie, historię realizacji oraz projekty dobrze oceniane przez rynek i klientów zagranicznych.', dev_chip_2: 'Lokalizacja', dev_title_2: 'Mocne położenie i potencjał inwestycyjny', dev_text_2: 'Liczy się nie tylko sam projekt, ale także lokalizacja, infrastruktura, styl życia oraz potencjał wzrostu wartości i wynajmu krótkoterminowego.', dev_chip_3: 'Selekcja', dev_title_3: 'Bezpieczniejszy wybór dla klienta', dev_text_3: 'Pokazujemy projekty, które mają sens zarówno dla klienta kupującego pod siebie, jak i dla inwestora szukającego jakości, bezpieczeństwa i płynności wyjścia.',
+          technology_title: 'Budowa domów — priorytet nr 2', technology_text: 'Drugim filarem oferty jest budowa domów w Hiszpanii w technologiach drewnianych, szkieletowych i Thermochip. To kierunek dla klientów, którzy chcą połączyć własną działkę lub zakupiony grunt z nowoczesną, energooszczędną i szybką realizacją.', technology_note: 'Budowa domu na Costa Blanca wymaga dobrego dopasowania technologii do działki, klimatu, celu inwestycyjnego oraz standardu wykończenia. Dlatego pokazujemy ten kierunek jako osobny, ekspercki blok.', tech_block_title: 'Co obejmuje realizacja', tech_li_1: 'analizę działki i dopasowanie projektu do warunków gruntu,', tech_li_2: 'dobór technologii: drewnianej, szkieletowej lub Thermochip,', tech_li_3: 'fundamenty dowolnej złożoności, instalacje i przygotowanie terenu,', tech_li_4: 'budowę domu w standardzie dopasowanym do klienta i inwestycji,', tech_li_5: 'remonty pod klucz, premium wykończenie wnętrz i przygotowanie domu do użytkowania lub wynajmu.', tech_btn_1: 'Zapytaj o realizację', tech_btn_2: 'Zobacz porównanie technologii',
+          plots_title: 'Działki pod zabudowę — priorytet nr 3', plots_text: 'Trzecim kierunkiem są działki budowlane na Costa Blanca. To rozwiązanie dla klientów, którzy chcą wejść w rynek od gruntu, zbudować własny dom lub połączyć zakup ziemi z późniejszą realizacją inwestycji.', plots_note: 'Każda działka powinna być analizowana nie tylko pod kątem ceny, ale także możliwości zabudowy, lokalizacji, mediów, potencjału wzrostu i dopasowania do przyszłego projektu domu.', plot_chip_1: 'Działki', plot_title_1: 'Grunt pod dom lub inwestycję', plot_text_1: 'Pokazujemy działki, które mają realny sens inwestycyjny i dają możliwość dalszej budowy domu lub realizacji prywatnego projektu.', plot_chip_2: 'Analiza', plot_title_2: 'Potencjał zabudowy i lokalizacji', plot_text_2: 'Sprawdzamy możliwości budowy, otoczenie, media i dopasowanie działki do planowanego domu lub strategii inwestycyjnej.', plot_chip_3: 'Połączenie', plot_title_3: 'Działka + projekt + budowa', plot_text_3: 'Łączymy grunt z kolejnym krokiem: projektem domu, doborem technologii, fundamentami i realizacją pod klucz.',
+          comparison_title: 'Porównanie: dom drewniany, dom szkieletowy i Thermochip', comparison_text: 'Klient powinien od razu zobaczyć, czym różnią się główne kierunki budowy domu w Hiszpanii i które rozwiązanie najlepiej odpowiada jego celowi.', scroll_hint: '💡 Przesuń tabelę w prawo →', table_param: 'Parametr', table_wood: 'Dom drewniany', table_timber: 'Dom szkieletowy', table_thermo: 'Thermochip', row1_param: 'Charakter produktu', row1_wood: 'Naturalny, estetyczny i premium, mocny dla lifestyle i prywatnej rezydencji', row1_timber: 'Uniwersalny i elastyczny wybór dla różnych budżetów i układów działki', row1_thermo: 'Nowoczesny, energooszczędny system dla szybkiej i przewidywalnej realizacji', row2_param: 'Komfort i parametry', row2_wood: 'Przyjemny mikroklimat i naturalny charakter wnętrza', row2_timber: 'Dobra izolacja i szerokie możliwości dopasowania konstrukcji', row2_thermo: 'Wysoka efektywność energetyczna i stabilny standard użytkowania', row3_param: 'Tempo i elastyczność', row3_wood: 'Świetny wybór dla klientów ceniących styl i wizerunek domu', row3_timber: 'Dobry balans między czasem realizacji, budżetem i funkcjonalnością', row3_thermo: 'Najmocniejszy kierunek dla inwestorów szukających szybkości i nowoczesności', row4_param: 'Najlepsze zastosowanie', row4_wood: 'Dom wakacyjny, premium rental, prywatny dom w naturalnym stylu', row4_timber: 'Dom całoroczny, inwestycja, działka prywatna', row4_thermo: 'Energooszczędny dom z szybkim terminem realizacji',
+          projects_title: 'Przykładowe kierunki projektowe', projects_text: 'Karuzela pokazuje różne formaty domu w Hiszpanii — od domu naturalnego i premium po rozwiązania inwestycyjne i nowoczesne układy dla Costa Blanca.', proj_chip_1: 'Drewniany', proj_title_1: 'Nowoczesny dom w naturalnym stylu', proj_text_1: 'Projekt łączący drewno, duże przeszklenia i układ idealny do życia przez cały rok lub sezonowego użytkowania.', proj_desc_1: 'Ten typ domu świetnie sprawdza się na działkach prywatnych na Costa Blanca, gdzie liczy się estetyka, lekkość bryły i komfort codziennego życia.', proj_chip_2: 'Premium', proj_title_2: 'Dom premium pod Costa Blanca lifestyle', proj_text_2: 'Wyższy standard, tarasy, strefy relaksu i wykończenie, które dobrze pracuje także pod wynajem krótkoterminowy.', proj_desc_2: 'To kierunek dla klientów, którzy chcą połączyć prywatność, jakość, dobre wnętrza i silny efekt wizualny w jednej inwestycji.', proj_chip_3: 'Inwestycyjny', proj_title_3: 'Model inwestycyjny', proj_text_3: 'Dom projektowany z myślą o promocji, wynajmie lub sprzedaży — z mocnym wizerunkiem i dobrym potencjałem rynkowym.', proj_desc_3: 'Silny efekt wizualny, wysoki standard i przemyślana technologia sprawiają, że taki dom dobrze przyciąga klientów zainteresowanych wypoczynkiem i inwestycją w Hiszpanii.',
+          process_title: 'Jak wygląda współpraca', process_text: 'Prowadzimy klienta etapami, aby proces zakupu działki, budowy domu, remontu i wykończenia w Hiszpanii był zrozumiały, wygodny i bezpieczny.', proc_title_1: 'Wybór działki i analiza', proc_text_1: 'Sprawdzamy lokalizację, potencjał działki, warunki zabudowy i dobór właściwej technologii budowy.', proc_title_2: 'Projekt, technologia i fundamenty', proc_text_2: 'Dobieramy układ, standard, technologię oraz rozwiązania konstrukcyjne i fundamentowe odpowiednie dla inwestycji.', proc_title_3: 'Realizacja, remont i premium wnętrza', proc_text_3: 'Kończymy budowę, instalacje, prace wykończeniowe i przygotowanie domu do zamieszkania, wynajmu lub sprzedaży.',
+          seo_title: 'Inwestycje w Hiszpanii — rynek, który łączy deweloperów, budowę i działki', seo_text: 'Costa Blanca to jeden z najbardziej dynamicznych regionów nieruchomości w Europie. Rosnący popyt na nowe projekty, ograniczona podaż dobrej ziemi oraz rozwój nowoczesnych technologii budowy sprawiają, że rynek Hiszpanii daje realne możliwości zarówno dla klientów prywatnych, jak i inwestorów szukających bezpieczeństwa i potencjału wzrostu.', seo_card_1_title: 'Nowe inwestycje od sprawdzonych deweloperów', seo_card_1_text: 'Współpracujemy ze sprawdzonymi deweloperami, którzy mają doświadczenie, historię realizacji i projekty odpowiadające na aktualny popyt rynku. Dzięki temu klient otrzymuje lepiej wyselekcjonowane inwestycje z mocną lokalizacją, dobrym standardem oraz większym potencjałem wzrostu wartości.', seo_card_2_title: 'Budowa domów w technologiach drewnianych, szkieletowych i Thermochip', seo_card_2_text: 'Coraz więcej klientów na Costa Blanca szuka nie tylko gotowej nieruchomości, ale także możliwości realizacji własnego domu. Dlatego rozwijamy kierunek budowy domów w nowoczesnych technologiach, które pozwalają łączyć szybkość realizacji, energooszczędność, estetykę i wyższy komfort użytkowania.', seo_card_3_title: 'Działki budowlane jako początek dobrze zaplanowanej inwestycji', seo_card_3_text: 'Działka na Costa Blanca może być początkiem bardzo silnej inwestycji, jeśli jest dobrze dobrana pod względem lokalizacji, możliwości zabudowy i przyszłego projektu. Dlatego analizujemy grunt nie tylko jako ofertę sprzedaży, ale jako bazę pod dom, projekt premium lub przyszłą odsprzedaż.',
+          contact_title: 'Zapytaj o inwestycje, działki lub budowę domu w Hiszpanii', contact_text: 'Doradzamy przy nowych inwestycjach od deweloperów, działkach budowlanych oraz budowie domów na Costa Blanca. Skontaktuj się z nami, aby otrzymać ofertę dopasowaną do celu inwestycyjnego, budżetu i lokalizacji.', contact_call: 'Zadzwoń teraz', contact_whatsapp: 'Napisz na WhatsApp', form_name: 'Twoje imię', form_phone: 'Telefon / WhatsApp', form_email: 'Email', form_message: 'Napisz, jaki dom lub projekt Cię interesuje i czy masz już działkę', form_button: 'Wyślij zapytanie', footer_title: 'Costa Blanca Invest & Build', footer_text: 'Inwestycje w Hiszpanii na Costa Blanca — działki budowlane, budowa domów, technologie drewniane, szkieletowe i Thermochip, fundamenty, remonty pod klucz i premium wykończenia.', footer_meta: '© 2026 | Strona stworzona przez Olga Chernyshenko — specjalista ds. nieruchomości w Polsce i Hiszpanii.', faq_title: 'FAQ — inwestycje w Hiszpanii i Costa Blanca', faq_text: 'Najczęstsze pytania klientów dotyczące zakupu działki, budowy domu i inwestowania w nieruchomości w Hiszpanii.', faq_q1: 'Czy warto inwestować w nieruchomości na Costa Blanca?', faq_a1: 'Tak — Costa Blanca to jeden z najstabilniejszych regionów w Hiszpanii pod względem inwestycji w nieruchomości. Wysoki popyt turystyczny i rosnący rynek najmu krótkoterminowego zwiększają potencjał ROI.', faq_q2: 'Ile kosztuje budowa domu w Hiszpanii?', faq_a2: 'Koszt budowy domu zależy od technologii, lokalizacji i standardu wykończenia. Średnio ceny zaczynają się od 1200–1800 €/m², ale finalny budżet zależy od projektu, fundamentów i poziomu wykończenia.', faq_q3: 'Czy obcokrajowiec może kupić działkę w Hiszpanii?', faq_a3: 'Tak, obcokrajowcy mogą bez ograniczeń kupować nieruchomości i działki w Hiszpanii. Wymagany jest numer NIE, konto bankowe i prawidłowa analiza dokumentów przed zakupem.', seo_links_title: 'Kluczowe kierunki inwestycji na Costa Blanca', seo_links_text: 'Wejdź w wybrany segment rynku — każda sekcja prowadzi do dedykowanej strony SEO zoptymalizowanej pod konkretne zapytania klientów.', seo_link_1_title: 'Działki Costa Blanca', seo_link_1_text: 'Najlepsze działki budowlane w Hiszpanii — pod inwestycję, budowę domu lub development.', seo_link_2_title: 'Eko domy Hiszpania', seo_link_2_text: 'Budowa nowoczesnych, energooszczędnych domów w Hiszpanii — drewno, szkielet i Thermochip.', seo_link_3_title: 'Nowe inwestycje', seo_link_3_text: 'Nowe projekty deweloperskie na Costa Blanca — apartamenty i wille pod inwestycję.'
+        }
+      };
+
+      function applyLocaleHead(lang) {
+        const meta = localeMeta[lang] || localeMeta.pl;
+        document.documentElement.lang = meta.htmlLang;
+        document.title = meta.title;
+        document.getElementById('meta-description')?.setAttribute('content', meta.description);
+        document.getElementById('canonical-link')?.setAttribute('href', `${siteBase}${meta.path}`);
+        document.getElementById('og-locale')?.setAttribute('content', meta.locale);
+        document.getElementById('og-title')?.setAttribute('content', meta.ogTitle);
+        document.getElementById('og-description')?.setAttribute('content', meta.ogDescription);
+        document.getElementById('og-url')?.setAttribute('content', `${siteBase}${meta.path}`);
+        document.getElementById('twitter-title')?.setAttribute('content', meta.twitterTitle);
+        document.getElementById('twitter-description')?.setAttribute('content', meta.twitterDescription);
+      }
+
+      function applyTranslations(lang) {
+        applyLocaleHead(lang);
+        const dict = translations[lang] || translations.pl;
+        document.querySelectorAll('[data-i18n]').forEach((el) => {
+          const key = el.getAttribute('data-i18n');
+          if (dict[key]) el.textContent = dict[key];
+        });
+        document.querySelectorAll('[data-i18n-placeholder]').forEach((el) => {
+          const key = el.getAttribute('data-i18n-placeholder');
+          if (dict[key]) el.setAttribute('placeholder', dict[key]);
+        });
+      }
+
+      const navToggle = document.querySelector('.nav-toggle');
+      const nav = document.querySelector('nav');
+      const overlay = document.querySelector('.menu-overlay');
+      if (navToggle && nav && overlay) {
+        navToggle.addEventListener('click', () => {
+          const isOpen = nav.classList.toggle('open');
+          overlay.classList.toggle('show', isOpen);
+          navToggle.textContent = isOpen ? '✕' : '☰';
+        });
+        overlay.addEventListener('click', () => {
+          nav.classList.remove('open');
+          overlay.classList.remove('show');
+          navToggle.textContent = '☰';
+        });
+        nav.querySelectorAll('a').forEach((link) => {
+          link.addEventListener('click', () => {
+            nav.classList.remove('open');
+            overlay.classList.remove('show');
+            navToggle.textContent = '☰';
+          });
+        });
+      }
+
+      const langButtons = document.querySelectorAll('.lang-switcher button');
+      let currentLang = BUILD_LANG;
+      langButtons.forEach((btn) => {
+        btn.addEventListener('click', () => {
+          currentLang = btn.dataset.lang;
+          langButtons.forEach((button) => button.classList.remove('active-lang'));
+          btn.classList.add('active-lang');
+          applyTranslations(currentLang);
+        });
+      });
+
+      const contactForm = document.getElementById('contact-form');
+      if (contactForm) {
+        contactForm.addEventListener('submit', (event) => {
+          event.preventDefault();
+          const formData = new FormData(contactForm);
+          const name = formData.get('name') || '';
+          const phone = formData.get('phone') || '';
+          const email = formData.get('email') || '';
+          const message = formData.get('message') || '';
+          const text = `Nowe zapytanie ze strony Costa Blanca Invest & Build:
+
+Imię: ${name}
+Telefon: ${phone}
+Email: ${email}
+
+Wiadomość:
+${message}`;
+          const url = `https://wa.me/34604158859?text=${encodeURIComponent(text)}`;
+          window.open(url, '_blank', 'noopener');
+        });
+      }
+
+      const track = document.querySelector('.projects-track');
+      const slides = Array.from(document.querySelectorAll('.project-slide'));
+      const prevBtn = document.querySelector('.carousel-btn.prev');
+      const nextBtn = document.querySelector('.carousel-btn.next');
+      const dots = Array.from(document.querySelectorAll('.carousel-dot'));
+      let currentSlide = 0;
+      let autoplay = null;
+
+      function updateCarousel() {
+        if (!track || !slides.length) return;
+        track.style.transform = `translateX(-${currentSlide * 100}%)`;
+        dots.forEach((dot, index) => dot.classList.toggle('active', index === currentSlide));
+      }
+
+      function goToSlide(index) {
+        currentSlide = (index + slides.length) % slides.length;
+        updateCarousel();
+      }
+
+      function stopAutoplay() {
+        if (autoplay) {
+          window.clearInterval(autoplay);
+          autoplay = null;
+        }
+      }
+
+      function startAutoplay() {
+        stopAutoplay();
+        autoplay = window.setInterval(() => goToSlide(currentSlide + 1), 4000);
       }
 
       if (track && slides.length) {
